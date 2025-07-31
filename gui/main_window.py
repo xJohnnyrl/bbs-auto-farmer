@@ -331,7 +331,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(github_label)
         layout.addSpacing(8)
 
-        youtube_label = QLabel('<a href="https://youtube.com/soon">YouTube Tutorial</a>')
+        youtube_label = QLabel('<a href="https://youtu.be/5Iqe13ydSzs?si=s4jfnPJjI7ouNKj0n">YouTube Tutorial</a>')
         youtube_label.setOpenExternalLinks(True)
         youtube_label.setObjectName("p")
         layout.addWidget(youtube_label)

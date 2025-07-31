@@ -1,6 +1,8 @@
 # BBS Auto Farmer
 
-An automated farming tool for Bleach: Brave Souls that can handle various game modes including quests, co-op, epic raids, sub stories, and PvP battles.
+An automated farming tool for Bleach: Brave Souls that can handle various game modes including point events, co-op, epic raids, sub stories, and brave battles.
+
+Check out the [tutorial](https://youtu.be/5Iqe13ydSzs?si=IZm7LfMLiDGNbXct) on how to get started
 
 ## Features
 
@@ -11,15 +13,9 @@ An automated farming tool for Bleach: Brave Souls that can handle various game m
 - **Sub Stories**: Complete sub stories with NEW quest detection
 - **Brave Battles**: Automated PvP battles
 - **Smart Settings**: Configurable limits for orbs, tickets, and battles
-- **Error Handling**: Custom error messages and graceful failure handling
-- **ESC to Stop**: Press ESC at any time to stop the automation
 
-## Prerequisites
-
-- **Python 3.11+**
-- **Windows 10/11** (uses Windows-specific window management)
-- **Bleach: Brave Souls** game client
-- **Game Resolution**: 1600x900 (required for image recognition)
+- **Python**
+- **uv**
 
 ## Installation
 
@@ -42,39 +38,15 @@ pip install uv
 uv sync
 ```
 
-### 3. Alternative: Using pip
-
-```bash
-pip install -r requirements.txt
-```
-
 ## Building Executable
 
-### Option 1: Using the Build Script (Recommended)
+### Using the Build Script (Recommended)
 
 ```bash
 python build_installer.py
 ```
 
 This will automatically install PyInstaller if needed and create both the executable and installer.
-
-### Option 2: Manual PyInstaller Build
-
-```bash
-# Install PyInstaller
-pip install pyinstaller
-
-# Build the executable (no console window)
-pyinstaller --noconsole --onefile --name=bbs_auto_farmer --add-data="assets/icons;assets/icons" --add-data="config;config" --add-data="gui/style.qss;gui" main.py
-```
-
-### Option 3: Using the Spec File
-
-```bash
-pyinstaller bbs_auto_farmer.spec
-```
-
-### Executable Location
 
 After building, the executable will be located at:
 
@@ -185,11 +157,8 @@ Edit `config/user_settings.json` to configure the automation:
 ### Running the Application
 
 ```bash
-# Activate virtual environment (if using uv)
+# Activate virtual environment
 uv run python main.py
-
-# Or directly with Python
-python main.py
 ```
 
 ### GUI Interface
@@ -221,62 +190,6 @@ The application provides a user-friendly GUI with three tabs:
 - **YouTube Tutorial**: Video guide (coming soon)
 - **Feedback**: Submit issues or contact via Twitter
 
-### Automation Features
-
-#### Smart Image Recognition
-
-- **Top-Left Priority**: Always clicks the most top-left occurrence of UI elements
-- **Error Handling**: Custom error messages for different failure scenarios
-- **Graceful Stops**: ESC key stops automation at any point
-
-#### Game Mode Specific Features
-
-**Sub Stories**:
-
-- Detects NEW icons on sub story categories
-- Navigates through all pages of each sub story
-- Completes all NEW quests within each story
-- Returns to main menu when done
-
-**Brave Battles**:
-
-- Simple battle loop with configurable limits
-- Handles battle completion and return to PvP screen
-
-**Other Modes**:
-
-- Orb and ticket management
-- Boost automation
-- Revive candle usage
-- Giftbox ticket collection
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"Game window not found"**
-
-   - Ensure Bleach: Brave Souls is running
-   - Check that the window is not minimized
-   - Verify the game resolution is 1600x900
-
-2. **"Not on [specific] screen"**
-
-   - Navigate to the correct menu before starting automation
-   - For Sub Stories: Go to Sub Stories menu
-   - For Brave Battles: Go to PvP screen
-
-3. **Image recognition failures**
-
-   - Check that game UI hasn't changed
-   - Verify screen resolution is correct
-   - Ensure game window is fully visible
-
-4. **ESC not stopping automation**
-   - Wait for current action to complete
-   - Try pressing ESC multiple times
-   - Check if debug terminal shows stop messages
-
 ### Debug Mode
 
 Enable debug mode in settings to see detailed logs:
@@ -285,31 +198,6 @@ Enable debug mode in settings to see detailed logs:
 - Displays image recognition attempts
 - Logs all clicks and actions
 - Helps identify issues
-
-## Development
-
-### Adding New Game Modes
-
-1. Create a new file in `core/logic/`
-2. Implement the automation logic
-3. Add GUI button in `gui/main_window.py`
-4. Add any required icon assets to `assets/icons/`
-
-### Icon Assets
-
-The application uses image recognition for UI automation. To add new functionality:
-
-1. Capture screenshots of UI elements
-2. Save as PNG files in `assets/icons/`
-3. Reference in code using `check_image_present()` and `find_and_click_image()`
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
 
 ## Support
 
