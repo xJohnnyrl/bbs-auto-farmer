@@ -19,6 +19,7 @@ Check out the [tutorial](https://youtu.be/5Iqe13ydSzs?si=IZm7LfMLiDGNbXct) on ho
 - **Brave Battles**: Automated PvP battles
 - **Smart Settings**: Configurable limits for orbs, tickets, and battles
 
+## Requirements
 - **Python**
 - **uv**
 
