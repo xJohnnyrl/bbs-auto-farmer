@@ -29,7 +29,7 @@ def check_image_present(template_path: str, screenshot=None, threshold: float = 
     return max_val >= threshold
 
 
-def find_and_click_image(template_path: str, screenshot=None, threshold: float = 0.85, double_click: bool = False) -> bool:
+def find_and_click_image(template_path: str, screenshot=None, threshold: float = 0.85, double_click: bool = False, top_left: bool = True) -> bool:
     from core.window_utils import get_bbs_window
 
     if screenshot is None:
@@ -59,12 +59,24 @@ def find_and_click_image(template_path: str, screenshot=None, threshold: float =
     if not locations:
         return False
     
-    # Sort by y-coordinate first (top to bottom), then by x-coordinate (left to right)
-    # This ensures we get the most top-left match
-    locations.sort(key=lambda loc: (loc[1], loc[0]))
+    if top_left:
+        # Sort by y-coordinate first (top to bottom), then by x-coordinate (left to right)
+        # This ensures we get the most top-left match
+        locations.sort(key=lambda loc: (loc[1], loc[0]))
+        max_loc = locations[0]
+    else:
+        # Find the location with the highest confidence (most accurate match)
+        max_val = 0
+        max_loc = None
+        for loc in locations:
+            val = res[loc[1], loc[0]]
+            if val > max_val:
+                max_val = val
+                max_loc = loc
+        
+        if max_loc is None:
+            return False
     
-    # Use the most top-left match
-    max_loc = locations[0]
     max_val = res[max_loc[1], max_loc[0]]
 
     h, w = template.shape[:2]

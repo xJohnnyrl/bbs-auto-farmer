@@ -63,6 +63,11 @@ def coop_stage():
                                     time.sleep(10)
                                 else:
                                     find_and_click_image("assets/icons/cancel.png", screenshot=screenshot)
+                            elif check_image_present("assets/icons/no_soul_tickets_co_op.png", screenshot=screenshot):
+                                if (orbs_used >= settings["max_orbs"] or (orbs_used + 9) >= settings["max_orbs"]) and settings["max_orbs"] != 0:
+                                    debug("[Tickets] Max orbs reached.")
+                                    break
+                                orbs_used = handle_tickets(orbs_used, settings["max_orbs"], True)
                             else:
                                 in_menu = False
                                 time.sleep(10)

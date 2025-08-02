@@ -158,7 +158,7 @@ class MainWindow(QMainWindow):
         self.confirm_and_start_stage("Retry Stage", retry_stage, include_settings=['max_orbs', 'max_tickets', 'use_revive_candles', 'auto_set_boost_to_max', 'auto_collect_ticket_from_giftbox'])
     
     def confirm_and_start_coop(self):
-        self.confirm_and_start_stage("Co-Op Stage", coop_stage, include_settings=['max_orbs', 'max_tickets', 'use_revive_candles', 'auto_set_boost_to_max'])
+        self.confirm_and_start_stage("Co-Op Stage", coop_stage, include_settings=['max_orbs', 'max_tickets', 'use_revive_candles', 'auto_set_boost_to_max', 'auto_collect_ticket_from_giftbox'])
     
     def confirm_and_start_epic_raid(self):
         self.confirm_and_start_stage("Epic Raid Stage", epic_raid_stage, include_settings=['max_orbs', 'max_tickets', 'use_revive_candles', 'auto_set_boost_to_max'])
@@ -198,7 +198,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(header_group)
 
         # 👉 Buttons
-        btn_retry = QPushButton("Start Retry Quest")
+        btn_retry = QPushButton("Start Retry Point Event")
         btn_retry.setObjectName("primaryButton")
         btn_retry.clicked.connect(self.confirm_and_start_retry)
         layout.addWidget(btn_retry)

@@ -17,7 +17,7 @@ def handle_end_menu():
                 debug(f"[Game] Clicked '{icon}'.")
                 if icon == "retry":
                     return True
-                time.sleep(1)
+                time.sleep(2)
                 last_icon = icon
                 times_tried = 0
                 icon_clicked = True
