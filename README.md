@@ -9,6 +9,11 @@ Check out the [tutorial](https://youtu.be/5Iqe13ydSzs?si=IZm7LfMLiDGNbXct) on ho
 > That means things might not be the cleanest, most optimized, or follow perfect structure — but hey, it works.  
 > Feel free to explore, learn from it, fork it, send updates, just don’t expect enterprise-level architecture 😅.
 
+## Updating 
+
+To update you will need to uninstall the old version and install the new one.
+You can uninstall by searching "add or remove program" on the windows search bar and search for bbs.
+
 ## Features
 
 - **Retry Stage**: Automate story quest retries with orb/ticket management
