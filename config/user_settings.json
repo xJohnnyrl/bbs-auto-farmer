@@ -5,6 +5,6 @@
   "auto_set_boost_to_max": true,
   "auto_collect_ticket_from_giftbox": true,
   "max_tickets": 40,
-  "debug_mode": false,
+  "debug_mode": true,
   "brave_battles_tickets": 5
 }

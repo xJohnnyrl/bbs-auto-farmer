@@ -251,7 +251,7 @@ class MainWindow(QMainWindow):
         layout.addSpacing(12)
 
         # Orbs setting
-        orbs_label = QLabel("Amount of Orbs to Use: (0 = Waits for tickets to recharge)")
+        orbs_label = QLabel("Amount of Orbs to Use: (0 = Waits for tickets to recharge) Min: 10")
         orbs_label.setObjectName("p")
         layout.addWidget(orbs_label)
         self.orbs_spin = QSpinBox()

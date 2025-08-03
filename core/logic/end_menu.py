@@ -16,8 +16,14 @@ def handle_end_menu():
             if find_and_click_image(f"assets/icons/{icon}.png", double_click=(icon == "tap_screen" or icon == "tap_here_to_continue"), screenshot=screenshot):
                 debug(f"[Game] Clicked '{icon}'.")
                 if icon == "retry":
-                    return True
-                time.sleep(2)
+                    time.sleep(2)
+                    screenshot = get_bbs_screenshot()
+                    if check_image_present(f"assets/icons/close.png", screenshot):
+                        debug("[Game] Close button found, Didn't actually click the retry button. Trying again")
+                        continue
+                    else:
+                        return True
+                time.sleep(1)
                 last_icon = icon
                 times_tried = 0
                 icon_clicked = True
