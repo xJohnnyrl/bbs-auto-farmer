@@ -5,9 +5,9 @@ An automated farming tool for Bleach: Brave Souls that can handle various game m
 Check out the [tutorial](https://youtu.be/5Iqe13ydSzs?si=IZm7LfMLiDGNbXct) on how to get started
 
 > ⚠️ **Disclaimer**  
-> This project was originally built for personal use, and a lot of the code was... vibe-coded™.  
-> That means things might not be the cleanest, most optimized, or follow perfect structure — but hey, it works.  
-> Feel free to explore, learn from it, fork it, send updates, just don’t expect enterprise-level architecture 😅.
+> This project was originally built for personal use, and some parts of the code were vibe-coded or done in a rush.  
+> That means things might not be the cleanest, most optimized, or follow perfect structure.  
+> Feel free to explore, learn from it, fork it, send updates, just don’t expect enterprise-level architecture.
 
 ## Updating 
 
