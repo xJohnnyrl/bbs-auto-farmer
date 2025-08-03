@@ -3,8 +3,8 @@
   "use_revive_candles": true,
   "auto_focus_bbs": false,
   "auto_set_boost_to_max": true,
-  "auto_collect_ticket_from_giftbox": true,
-  "max_tickets": 40,
-  "debug_mode": true,
+  "auto_collect_ticket_from_giftbox": false,
+  "max_tickets": -1,
+  "debug_mode": false,
   "brave_battles_tickets": 5
 }
